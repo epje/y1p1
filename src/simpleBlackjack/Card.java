@@ -1,3 +1,5 @@
+package simpleBlackjack;
+
 public class Card
 {
     String name;

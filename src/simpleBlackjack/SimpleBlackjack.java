@@ -1,3 +1,5 @@
+package simpleBlackjack;
+
 import java.io.*;
 
 public class SimpleBlackjack {
@@ -76,13 +78,13 @@ public class SimpleBlackjack {
             // Block runs when user decides to draw a card.
             while (userDraws) {
 
-                // Draw a new card and increment user's card count.
+                // Draw a new card and update sum of the cards.
                 userCards[userCardsCount] = deck.drawCard();
-                userCardsCount++;
+                userSum += userCards[userCardsCount].value;
 
-                // State what card the user drew and update the cards sum.
-                System.out.printf("User drew a/an [%s]%n", userCards[userCardsCount - 1].value);
-                userSum += userCards[userCardsCount - 1].value;
+                // State what card the user drew and increment the cards count.
+                System.out.printf("User drew a/an [%s]%n", userCards[userCardsCount].value);
+                userCardsCount++;
 
                 displayCards(false);
 
@@ -105,13 +107,14 @@ public class SimpleBlackjack {
             // Computer's turn to play.
             System.out.println("\nCOMPUTER'S TURN");
             while (computerSum < 18) {
-                // Draw a new card and increment computer's card count.
-                computerCards[computerCardsCount] = deck.drawCard();
-                computerCardsCount++;
 
-                // State what card the computer drew and update the cards sum.
-                System.out.printf("Computer drew a/an [%s]%n", computerCards[computerCardsCount - 1].value);
-                computerSum += computerCards[computerCardsCount - 1].value;
+                // Draw a new card and update the sum of the cards.
+                computerCards[computerCardsCount] = deck.drawCard();
+                computerSum += computerCards[computerCardsCount].value;
+
+                // State what card the computer drew and increment the cards count.
+                System.out.printf("Computer drew a/an [%s]%n", computerCards[computerCardsCount].value);
+                computerCardsCount++;
 
                 displayCards(true);
             }

@@ -1,3 +1,5 @@
+package simpleBlackjack;
+
 import java.util.Random;
 
 public class Deck
