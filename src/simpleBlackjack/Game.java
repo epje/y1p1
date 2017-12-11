@@ -134,10 +134,10 @@ public class Game {
         System.out.println("\nEND");
         displayCards(true);
 
-        if (computerSum > 21) {
+        if ((computerSum > 21) || (computerCardsCount > 11)) {
             // When the computer goes over 21.
             System.out.println("Computer went over 21. USER WINS!");
-        } else if (userSum > 21) {
+        } else if ((userSum > 21) || (userCardsCount > 11)) {
             // When the user goes over 21.
             System.out.println("User went over 21. COMPUTER WINS!");
         } else if (computerSum == userSum) {
